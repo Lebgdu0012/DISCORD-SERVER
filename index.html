@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statut Serveur Discord</title>
+    <style>
+        /* Style Hacker */
+        body {
+            background-color: black;
+            color: #00ff00;
+            font-family: 'Courier New', monospace;
+            overflow: hidden;
+        }
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-top: 50px;
+        }
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            background-color: black;
+            color: #00ff00;
+            font-size: 1.5em;
+            padding: 15px;
+            border: 2px solid #00ff00;
+            cursor: pointer;
+            width: 300px;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            margin: 20px;
+        }
+        button:hover {
+            background-color: #00ff00;
+            color: black;
+        }
+        p {
+            font-size: 1.5em;
+            color: #ff0000; /* Le texte en rouge pour dire que ce n'est pas ouvert */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Statut du Serveur Discord</h1>
+        <div id="serverStatus" class="links">
+            <!-- Le statut du serveur sera affiché ici -->
+        </div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            // Remplace ce lien par l'URL de ton serveur Discord
+            const linkUrl = "";  // Remplace ce champ avec ton vrai lien Discord (ex: "https://discord.gg/monserveur")
+
+            const serverStatus = document.getElementById('serverStatus');
+
+            // Vérifier si le lien est vide
+            if (!linkUrl) {
+                // Si pas de lien, afficher "Serveur non ouvert au public"
+                serverStatus.innerHTML = "<p>Serveur non ouvert au public (en cour de développement)</p>";
+            } else {
+                // Si lien valide, afficher le bouton
+                serverStatus.innerHTML = `<button onclick="window.location.href = '${linkUrl}'">Inviter sur Discord</button>`;
+            }
+        }
+    </script>
+</body>
+</html>
